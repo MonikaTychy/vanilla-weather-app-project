@@ -1,0 +1,51 @@
+body {
+    font-family: 'Caveat', cursive;
+}
+h1 {
+    font-weight: 700;
+    font-size: 42px;
+}
+h2 {
+    font-weight: 600;
+    font-size: 34px;
+}
+h2 .units{
+    font-size: 18px;
+    position: relative;
+    top: -8px;
+}
+.weather-app-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px 0px;
+    background-image: url(../images/blue-sky.jpg);
+    background-position: 100%;
+    background-size: cover;
+}
+.weather-app {
+    border-radius: 20px;
+    border: 2px solid #000;
+    text-align: center;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+small {
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    font-family: monospace;
+}
