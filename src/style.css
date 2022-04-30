@@ -18,6 +18,10 @@ h2 .units{
 #description:first-letter {
     text-transform: capitalize;
 }
+#icon {
+    position: relative;
+    top: -30px;
+}
 .weather-app-wrapper {
     max-width: 600px;
     margin: 0 auto;
