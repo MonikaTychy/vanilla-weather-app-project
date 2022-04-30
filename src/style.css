@@ -4,16 +4,19 @@ body {
 h1 {
     font-weight: 700;
     font-size: 42px;
+    text-decoration: underline;
 }
 h2 {
     font-weight: 600;
     font-size: 34px;
-    text-transform: capitalize;
 }
 h2 .units{
     font-size: 18px;
     position: relative;
     top: -8px;
+}
+#description:first-letter {
+    text-transform: capitalize;
 }
 .weather-app-wrapper {
     max-width: 600px;
