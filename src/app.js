@@ -32,13 +32,13 @@ document.querySelector("#description").innerHTML=response.data.weather[0].descri
 document.querySelector("#pressure").innerHTML=response.data.main.pressure;
 document.querySelector("#speed").innerHTML=Math.round(response.data.wind.speed);
 timeElement.innerHTML = formatTime(response.data.dt * 1000);
-iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
 function search (city) {
     let apiKey = "49d519d3a707f25a178a456019ddf9de";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}&units=metric`;
     
     axios.get(apiUrl).then(showTemp);
 }
