@@ -15,6 +15,13 @@ h2 .units{
     position: relative;
     top: -8px;
 }
+a {
+    text-decoration: none;
+}
+.units .active{
+    color: #000;
+    cursor: default;
+}
 #description:first-letter {
     text-transform: capitalize;
 }

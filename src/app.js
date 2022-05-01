@@ -25,8 +25,9 @@ function formatTime (timestamp) {
 function showTemp (response) {
     let timeElement = document.querySelector("#time");
     let iconElement = document.querySelector("#icon");
+    celsiusTemp = Math.round(response.data.main.temp);
 document.querySelector("#city").innerHTML=response.data.name;
-document.querySelector("#temp").innerHTML=Math.round(response.data.main.temp);
+document.querySelector("#temp").innerHTML=celsiusTemp;
 document.querySelector("#description").innerHTML=response.data.weather[0].description;
 document.querySelector("#pressure").innerHTML=response.data.main.pressure;
 document.querySelector("#speed").innerHTML=Math.round(response.data.wind.speed);
@@ -63,9 +64,35 @@ function getCurrentPosition (){
     navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+function displayFahrenheitTemp (event){
+    event.preventDefault();
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrenheitTemp = Math.round((celsiusTemp*9)/5+32);
+    let tempElement = document.querySelector("#temp");
+    tempElement.innerHTML = fahrenheitTemp;
+}
+
+function displayCelsiusTemp (event){
+    event.preventDefault();
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    let tempElement = document.querySelector("#temp");
+    tempElement.innerHTML = celsiusTemp;
+}
+
+let celsiusTemp = null;
 
 let form = document.querySelector ("#search-engine");
 form.addEventListener("submit", handleSubmit);
 
 let button = document.querySelector("#current-location");
 button.addEventListener("click", getCurrentPosition);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+search("Gdynia");
