@@ -18,6 +18,9 @@ h2 .units{
 a {
     text-decoration: none;
 }
+.weather-detail {
+    color: #000;
+}
 .units .active{
     color: #000;
     cursor: default;
