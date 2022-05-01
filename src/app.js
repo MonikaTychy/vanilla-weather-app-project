@@ -48,6 +48,24 @@ function handleSubmit (event){
     search (city);
 }
 
+function showPosition (position){
+    let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
+    let apiKey = "49d519d3a707f25a178a456019ddf9de";
+    let units = "metric";
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiUrl = `${apiEndpoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+    
+    axios.get(apiUrl).then(showTemp);
+}
+
+function getCurrentPosition (){
+    navigator.geolocation.getCurrentPosition(showPosition);
+}
+
 
 let form = document.querySelector ("#search-engine");
 form.addEventListener("submit", handleSubmit);
+
+let button = document.querySelector("#current-location");
+button.addEventListener("click", getCurrentPosition);
