@@ -18,6 +18,24 @@ h2 .units{
 a {
     text-decoration: none;
 }
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+small {
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    font-family: monospace;
+}
 .weather-detail {
     color: #000;
 }
@@ -44,26 +62,20 @@ a {
     background-position: 100%;
     background-size: cover;
 }
-.weather-app {
+.weather-app, .forecast-wrapper {
     border-radius: 20px;
     border: 2px solid #000;
     text-align: center;
 }
-ul {
-    margin: 0;
-    padding: 0;
-}
-li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: 24px;
-    font-weight: 500;
-}
-small {
-    margin: 0 auto;
-    display: block;
-    width: fit-content;
+.forecast-wrapper {
+    margin: 20px;
     padding: 10px;
-    font-family: monospace;
+    font-size: 18px;
+    font-weight: 700;
+}
+.forecast-units{
+    color: #fbfbfb;
+}
+#min-temp {
+    opacity: 0.6;
 }
