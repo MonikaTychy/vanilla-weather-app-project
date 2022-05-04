@@ -41,8 +41,8 @@ function displayForecast (response){
 
 forecastHTML = forecastHTML + `<div class="col">
 <div>${formatForecastDay(forecastDay.dt * 1000)}</div>
-<div><img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="42" /></div>
 <div class="forecast-units"><span class="max-temp" id="max-temp">${Math.round(forecastDay.temp.max)}°</span> | <span class="min-temp" id="min-temp">${Math.round(forecastDay.temp.min)}°</span></div>
+<div><img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="65" /></div>
 </div>`;
         }
     });

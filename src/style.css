@@ -17,6 +17,7 @@ h2 .units{
 }
 a {
     text-decoration: none;
+    color: #98b9eb;
 }
 ul {
     margin: 0;
@@ -35,6 +36,9 @@ small {
     width: fit-content;
     padding: 10px;
     font-family: monospace;
+}
+.container {
+    margin-top: 20px;
 }
 .weather-detail {
     color: #000;
@@ -66,16 +70,20 @@ small {
     border-radius: 20px;
     border: 2px solid #000;
     text-align: center;
+    padding: 20px 0px;
 }
 .forecast-wrapper {
     margin: 20px 0px;
-    padding: 10px 0px;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 900;
+    color: #461105;
 }
 .forecast-units{
-    color: #fbfbfb;
+    color: #9f260c;
 }
 #min-temp {
-    opacity: 0.75;
+    opacity: 0.6;
+}
+#search-engine {
+    margin: 30px 0px;
 }

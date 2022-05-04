@@ -16,19 +16,6 @@
 <body>
 <div class="container">
     <div class="weather-app-wrapper">
-        <form class="row align-items-center mb-3" id="search-engine">
-            <div class="col-7">
-              <input type="search" class="form-control w-100" id="city-input" placeholder="Enter city name" autocomplete="off">
-            </div>
-            <div class="col-3">
-              <input type="submit" class="form-control btn btn-primary w-100" value="Search">
-            </div>
-            <div class="col-2">
-              <button type="button" class="btn btn-outline-dark w-100" id="current-location">
-                <i class="fa-solid fa-map-location"></i>
-              </button>  
-            </div>
-          </form>
     <div class="weather-app">
 <h1 id="city"></h1>
 <h2>
@@ -56,6 +43,19 @@
 </div>
 </div>
   <div class="forecast-wrapper" id="forecast"></div>
+  <form class="row align-items-center mb-3" id="search-engine">
+    <div class="col-7">
+      <input type="search" class="form-control w-100" id="city-input" placeholder="Enter city name" autocomplete="off">
+    </div>
+    <div class="col-3">
+      <input type="submit" class="form-control btn btn-primary w-100" value="Search">
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-dark w-100" id="current-location">
+        <i class="fa-solid fa-map-location"></i>
+      </button>  
+    </div>
+  </form>
 </div>
 <small>
     <a href="https://github.com/MonikaTychy/vanilla-weather-app-project.git" target="_blank" class="open-source">open-source code</a>, by Monika Tychy
