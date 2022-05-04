@@ -21,6 +21,30 @@ function formatTime (timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast (response){
+
+    let forecast = response.data.daily;
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    
+    forecast.forEach(function(forecastDay){      
+
+forecastHTML = forecastHTML + `<div class="col">
+<div>${forecastDay.dt}</div>
+<div><img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="42" /></div>
+<div class="forecast-units"><span class="max-temp" id="max-temp">${Math.round(forecastDay.temp.max)}°</span> | <span class="min-temp" id="min-temp">${Math.round(forecastDay.temp.min)}°</span></div>
+    });
+
+    forecastHTML = forecastHTML + `</div>`
+    forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecastCoord (coordinates){
+    let apiKey = "49d519d3a707f25a178a456019ddf9de";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(displayForecast);
+}
 
 function showTemp (response) {
     let timeElement = document.querySelector("#time");
@@ -34,6 +58,8 @@ document.querySelector("#speed").innerHTML=Math.round(response.data.wind.speed);
 timeElement.innerHTML = formatTime(response.data.dt * 1000);
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+
+getForecastCoord(response.data.coord);
 }
 
 function search (city) {
@@ -81,25 +107,6 @@ function displayCelsiusTemp (event){
     tempElement.innerHTML = celsiusTemp;
 }
 
-function displayForecast (){
-
-    let forecastElement = document.querySelector("#forecast");
-
-    let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
-    let forecastHTML = `<div class="row">`;
-    
-    days.forEach(function(day){
-
-forecastHTML = forecastHTML + `<div class="col">
-<div>${day}</div>
-<div><img src="https://openweathermap.org/img/wn/10d@2x.png" width="10%" /></div>
-<div class="forecast-units"><span class="max-temp" id="max-temp">18°</span> <span class="min-temp" id="min-temp">5°</span></div>
-</div>`;
-    });
-
-    forecastHTML = forecastHTML + `</div>`
-    forecastElement.innerHTML = forecastHTML;
-}
 
 let celsiusTemp = null;
 
@@ -114,7 +121,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
-
-displayForecast();
 
 search("Gdynia");
