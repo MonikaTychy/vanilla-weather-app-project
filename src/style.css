@@ -68,8 +68,8 @@ small {
     text-align: center;
 }
 .forecast-wrapper {
-    margin: 20px;
-    padding: 10px;
+    margin: 20px 0px;
+    padding: 10px 0px;
     font-size: 18px;
     font-weight: 700;
 }
@@ -77,5 +77,5 @@ small {
     color: #fbfbfb;
 }
 #min-temp {
-    opacity: 0.6;
+    opacity: 0.75;
 }
