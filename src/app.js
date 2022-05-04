@@ -81,6 +81,26 @@ function displayCelsiusTemp (event){
     tempElement.innerHTML = celsiusTemp;
 }
 
+function displayForecast (){
+
+    let forecastElement = document.querySelector("#forecast");
+
+    let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+    let forecastHTML = `<div class="row">`;
+    
+    days.forEach(function(day){
+
+forecastHTML = forecastHTML + `<div class="col">
+<div>${day}</div>
+<div><img src="https://openweathermap.org/img/wn/10d@2x.png" width="10%" /></div>
+<div class="forecast-units"><span class="max-temp" id="max-temp">18°</span> <span class="min-temp" id="min-temp">5°</span></div>
+</div>`;
+    });
+
+    forecastHTML = forecastHTML + `</div>`
+    forecastElement.innerHTML = forecastHTML;
+}
+
 let celsiusTemp = null;
 
 let form = document.querySelector ("#search-engine");
@@ -94,5 +114,7 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+displayForecast();
 
 search("Gdynia");
