@@ -15,10 +15,6 @@ h2 .units{
     position: relative;
     top: -8px;
 }
-a {
-    text-decoration: none;
-    color: #98b9eb;
-}
 ul {
     margin: 0;
     padding: 0;
@@ -42,10 +38,6 @@ small {
 }
 .weather-detail {
     color: #000;
-}
-.units .active{
-    color: #000;
-    cursor: default;
 }
 #description:first-letter {
     text-transform: capitalize;

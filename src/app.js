@@ -102,36 +102,10 @@ function getCurrentPosition (){
     navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-function displayFahrenheitTemp (event){
-    event.preventDefault();
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    let fahrenheitTemp = Math.round((celsiusTemp*9)/5+32);
-    let tempElement = document.querySelector("#temp");
-    tempElement.innerHTML = fahrenheitTemp;
-}
-
-function displayCelsiusTemp (event){
-    event.preventDefault();
-    celsiusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    let tempElement = document.querySelector("#temp");
-    tempElement.innerHTML = celsiusTemp;
-}
-
-
-let celsiusTemp = null;
-
 let form = document.querySelector ("#search-engine");
 form.addEventListener("submit", handleSubmit);
 
 let button = document.querySelector("#current-location");
 button.addEventListener("click", getCurrentPosition);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("Gdynia");
